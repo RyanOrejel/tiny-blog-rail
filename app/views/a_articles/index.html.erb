@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+<h1>Pagina de Inicio</h1>
+<h1>A Articles</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Body</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @a_articles.each do |a_article| %>
+      <tr>
+        <td><%= a_article.title %></td>
+        <td><%= a_article.body %></td>
+        <td><%= link_to 'Show', a_article %></td>
+        <td><%= link_to 'Edit', edit_a_article_path(a_article) %></td>
+        <td><%= link_to 'Destroy', a_article, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New A Article', new_a_article_path %>
